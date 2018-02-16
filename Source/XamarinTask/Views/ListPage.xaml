@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="XamarinTask.Views.ListPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="About Canada"
+    BindingContext="XamarinProficiencyExercise.ViewModels.ItemsViewModel">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="WhiteSmoke">
+            <ListView
+                CachingStrategy="RecycleElement"
+                HasUnevenRows="true"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                ItemsSource="{Binding Items}"
+                RefreshCommand="{Binding LoadItemsCommand}"
+                VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    LineBreakMode="NoWrap"
+                                    Style="{DynamicResource ListItemTextStyle}"
+                                    Text="{Binding Title}"
+                                    TextColor="#2B98F0" />
+                                <StackLayout
+                                    HorizontalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    VerticalOptions="Start">
+                                    <Label
+                                        FontSize="13"
+                                        Style="{DynamicResource ListItemDetailTextStyle}"
+                                        Text="{Binding Description}" />
+                                    <Image
+                                        Aspect="Fill"
+                                        HeightRequest="100"
+                                        HorizontalOptions="EndAndExpand"
+                                        Source="{Binding ImageHref}"
+                                        VerticalOptions="Center"
+                                        WidthRequest="100" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Orientation="Horizontal">
+                <Button
+                    Clicked="SortItem_Clicked"
+                    Command="{Binding SortItemsCommand}"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Sort List"
+                    TextColor="#2B98F0"
+                    VerticalOptions="EndAndExpand"
+                    WidthRequest="150" />
+                <Button
+                    Clicked="RefreshItem_Clicked"
+                    Command="{Binding LoadItemsCommand}"
+                    HorizontalOptions="EndAndExpand"
+                    Text="Refresh list"
+                    TextColor="#2B98F0"
+                    VerticalOptions="EndAndExpand"
+                    WidthRequest="150" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

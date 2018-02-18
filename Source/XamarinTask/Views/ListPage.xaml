@@ -4,7 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="About Canada"
-    BindingContext="XamarinProficiencyExercise.ViewModels.ItemsViewModel">
+    BindingContext="XamarinTask.ViewModels.ItemsViewModel">
 
     <ContentPage.Content>
         <StackLayout BackgroundColor="WhiteSmoke">

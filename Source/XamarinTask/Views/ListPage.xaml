@@ -50,7 +50,6 @@
             </ListView>
             <StackLayout Orientation="Horizontal">
                 <Button
-                    Clicked="SortItem_Clicked"
                     Command="{Binding SortItemsCommand}"
                     HorizontalOptions="StartAndExpand"
                     Text="Sort List"
@@ -58,7 +57,6 @@
                     VerticalOptions="EndAndExpand"
                     WidthRequest="150" />
                 <Button
-                    Clicked="RefreshItem_Clicked"
                     Command="{Binding LoadItemsCommand}"
                     HorizontalOptions="EndAndExpand"
                     Text="Refresh list"

@@ -23,19 +23,5 @@ namespace XamarinTask.Views
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
         }
-
-        #region Methods
-        //Method invokes when sort button is clicked
-        void SortItem_Clicked(object sender, EventArgs e)
-        {
-            viewModel.SortItemsCommand.Execute(null);
-        }
-
-        //Method invokes when refresh button is clicked
-        void RefreshItem_Clicked(object sender, EventArgs e)
-        {
-            viewModel.LoadItemsCommand.Execute(null);
-        }
-        #endregion
     }
 }

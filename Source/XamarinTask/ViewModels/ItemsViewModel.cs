@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using Xamarin.Forms;
 using XamarinTask.Constants;
 using System.Linq;
+using System.Windows.Input;
 
 namespace XamarinTask
 {
@@ -22,8 +23,8 @@ namespace XamarinTask
         ///  Backfield for XamarinTask list
         /// </summary>
         public ObservableCollection<Item> Items { get; set; }
-        public Command LoadItemsCommand { get; set; }
-        public Command SortItemsCommand { get; set; }
+        public ICommand LoadItemsCommand { get; set; }
+        public ICommand SortItemsCommand { get; set; }
         static int count = 0;
         #endregion
         public ItemsViewModel()

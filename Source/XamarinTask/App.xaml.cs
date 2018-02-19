@@ -23,9 +23,6 @@ namespace XamarinTask
                 DependencyService.Register<CloudDataStore>();
 
             //Invoke the Navigation page for both iOS and Android
-            if (Device.RuntimePlatform == Device.iOS)
-                MainPage = new NavigationPage(new ListPage());
-            else
                 MainPage = new NavigationPage(new ListPage());
         }
     }
